@@ -1,0 +1,101 @@
+x264 configure script
+Command line options: "--prefix=/home/d/pc2drc/drc-x264/build" "--enable-shared" "--disable-cli" "--extra-cflags=-I/usr/include/x86_64-linux-gnu" "--extra-ldflags=-L/usr/lib/x86_64-linux-gnu"
+
+checking whether gcc works... yes
+checking whether gcc supports for( int i = 0; i < 9; i++ ); with -std=gnu99... yes
+checking whether yasm supports vpmovzxwd ymm0, xmm0... yes
+checking whether gcc supports __asm__("pabsw %xmm0, %xmm0");... yes
+checking for -mpreferred-stack-boundary=5... yes
+checking for pthread.h... yes
+checking for cpu_set_t p_aff; return CPU_COUNT(&p_aff); in sched.h... yes
+checking for return log2f(2); in math.h... yes
+checking for MADV_HUGEPAGE; in sys/mman.h... yes
+checking for sws_init_context(0,0,0); in libswscale/swscale.h... yes
+checking whether defined(AV_PIX_FMT_FLAG_RGB) is true... yes
+checking for avformat_close_input(0); in libavformat/avformat.h... yes
+checking for FFMS_DestroyVideoSource(0); in ffms.h... no
+Failed commandline was:
+--------------------------------------------------
+gcc conftest.c -m64  -Wall -I. -I$(SRCPATH) -I/usr/include/x86_64-linux-gnu -std=gnu99 -mpreferred-stack-boundary=5  -lffms2  -m64  -L/usr/lib/x86_64-linux-gnu -lm -lpthread -o conftest
+conftest.c:1:10: fatal error: ffms.h: No such file or directory
+    1 | #include <ffms.h>
+      |          ^~~~~~~~
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <ffms.h>
+int main () { FFMS_DestroyVideoSource(0); return 0; }
+--------------------------------------------------
+checking for FFMS_DestroyVideoSource(0); in ffms.h... no
+Failed commandline was:
+--------------------------------------------------
+gcc conftest.c -m64  -Wall -I. -I$(SRCPATH) -I/usr/include/x86_64-linux-gnu -std=gnu99 -mpreferred-stack-boundary=5  -lffms2 -lstdc++ -L.  -lavformat -lavcodec -lavutil -lswscale  -m64  -L/usr/lib/x86_64-linux-gnu -lm -lpthread -o conftest
+conftest.c:1:10: fatal error: ffms.h: No such file or directory
+    1 | #include <ffms.h>
+      |          ^~~~~~~~
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <ffms.h>
+int main () { FFMS_DestroyVideoSource(0); return 0; }
+--------------------------------------------------
+checking for lsmash.h... no
+Failed commandline was:
+--------------------------------------------------
+gcc conftest.c -m64  -Wall -I. -I$(SRCPATH) -I/usr/include/x86_64-linux-gnu -std=gnu99 -mpreferred-stack-boundary=5  -I/usr/include/x86_64-linux-gnu  -I/usr/include/x86_64-linux-gnu  -llsmash -L.  -lavformat -lavcodec -lavutil -lswscale  -lswscale -lavutil  -m64  -L/usr/lib/x86_64-linux-gnu -lm -lpthread -o conftest
+conftest.c:1:10: fatal error: lsmash.h: No such file or directory
+    1 | #include <lsmash.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <lsmash.h>
+int main () {  return 0; }
+--------------------------------------------------
+checking for -lz... yes
+checking for gpac/isomedia.h... no
+Failed commandline was:
+--------------------------------------------------
+gcc conftest.c -m64  -Wall -I. -I$(SRCPATH) -I/usr/include/x86_64-linux-gnu -std=gnu99 -mpreferred-stack-boundary=5  -I/usr/include/x86_64-linux-gnu  -I/usr/include/x86_64-linux-gnu -lgpac_static -lz -L.  -lavformat -lavcodec -lavutil -lswscale  -lswscale -lavutil  -m64  -L/usr/lib/x86_64-linux-gnu -lm -lpthread -o conftest
+conftest.c:1:10: fatal error: gpac/isomedia.h: No such file or directory
+    1 | #include <gpac/isomedia.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+--------------------------------------------------
+Failed program was:
+--------------------------------------------------
+#include <gpac/isomedia.h>
+int main () {  return 0; }
+--------------------------------------------------
+checking for uint32_t test_vec __attribute__ ((vector_size (16))) = {0,1,2,3}; in stdint.h... yes
+checking for stdio.h... yes
+checking for -fno-tree-vectorize... yes
+checking for fseeko(stdin,0,0); in stdio.h... yes
+checking for -Wshadow... yes
+checking for perl... yes
+
+platform:      X86_64
+system:        LINUX
+cli:           no
+libx264:       internal
+shared:        yes
+static:        no
+asm:           yes
+interlaced:    yes
+avs:           avxsynth
+lavf:          yes
+ffms:          no
+mp4:           no
+gpl:           yes
+thread:        posix
+opencl:        yes
+filters:       resize crop select_every 
+debug:         no
+gprof:         no
+strip:         no
+PIC:           yes
+bit depth:     8
+chroma format: all
