@@ -194,16 +194,16 @@ print("Starting VNC server...")
 #subprocess.check_call(['tigervncserver', '--kill', ':1']) 
 
 time.sleep(0.5)
-#os.system("sudo runuser -u thefloppydriver -- /bin/bash -c \"echo -e '12345678\\n12345678\\nn' | vncpasswd\"") #unnecessary
+#os.system("sudo runuser -u d -- /bin/bash -c \"echo -e '12345678\\n12345678\\nn' | vncpasswd\"") #unnecessary
 #subprocess.check_call(['chmod', '0664', user_dir+'/.vnc/passwd'])
-#os.system("sudo runuser -u thefloppydriver -- tigervncserver :1 -passwd "+user_dir+"/.vnc/passwd -depth 24 -geometry 640x480 -localhost yes")
+#os.system("sudo runuser -u d -- tigervncserver :1 -passwd "+user_dir+"/.vnc/passwd -depth 24 -geometry 640x480 -localhost yes")
 try:
-    os.system("sudo runuser -u thefloppydriver -- tigervncserver :1 -useold -FrameRate 59.94 -SecurityTypes None -depth 24 -geometry 640x480 -localhost yes -xstartup "+current_working_directory+"/libdrc-vnc/vncconfig-files/Xvnc-session-gnome")
+    os.system("sudo runuser -u d -- tigervncserver :1 -useold -FrameRate 59.94 -SecurityTypes None -depth 24 -geometry 640x480 -localhost yes -xstartup "+current_working_directory+"/libdrc-vnc/vncconfig-files/Xvnc-session-gnome")
 except:
     print("Failed to start tigervncserver, killing and trying again.")
     subprocess.check_call(['tigervncserver', '--kill', ':1'])
     try:
-        os.system("sudo runuser -u thefloppydriver -- tigervncserver :1 -useold -FrameRate 59.94 -SecurityTypes None -depth 24 -geometry 640x480 -localhost yes -xstartup "+current_working_directory+"/libdrc-vnc/vncconfig-files/Xvnc-session-gnome")
+        os.system("sudo runuser -u d -- tigervncserver :1 -useold -FrameRate 59.94 -SecurityTypes None -depth 24 -geometry 640x480 -localhost yes -xstartup "+current_working_directory+"/libdrc-vnc/vncconfig-files/Xvnc-session-gnome")
     except:
         print("Could not start tigervncserver.")
         input("(press enter to quit)")
@@ -361,7 +361,7 @@ print("Starting drcvncclient!")
 subprocess.check_call(['chmod', '777', '/dev/uinput']) #make sure that drcvncclient can write to this
 
 
-#subprocess.check_call(['cp', './stage-4-start-pc2drc.py', './start-pc2drc.py'])
+#subprocess.check_call(['cp', './stage-4-start-pc2drc.py', './start-pc2drc.sh'])
 
 #print("start drcvncclient manually now.")
 #time.sleep(1000)

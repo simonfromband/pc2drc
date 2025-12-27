@@ -524,10 +524,3 @@ while True:
 
 
 #wlan = ip link show | grep -o -m1 "\w*: wl\w*" | grep -o "\w*wl\w*"
-
-
-
-
-
-
-

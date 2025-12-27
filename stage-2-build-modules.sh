@@ -130,7 +130,7 @@ chown -R $USERNAME:$USERNAME ./external_pkg_install_dir
 rm -rf ./external_pkg_install_dir/* #careful with this
 
 cd ./external_pkg_build_dir
-wget https://ftp.openssl.org/source/old/1.0.1/openssl-1.0.1u.tar.gz --no-check-certificate
+wget https://openssl.org/source/old/1.0.1/openssl-1.0.1u.tar.gz --no-check-certificate
 git clone https://github.com/LibVNC/libvncserver.git
 
 
