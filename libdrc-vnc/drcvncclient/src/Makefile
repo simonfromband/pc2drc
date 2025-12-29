@@ -168,7 +168,7 @@ AUTOHEADER = ${SHELL} /home/d/pc2drc/libdrc-vnc/drcvncclient/missing autoheader
 AUTOMAKE = ${SHELL} /home/d/pc2drc/libdrc-vnc/drcvncclient/missing automake-1.16
 AWK = mawk
 CPPFLAGS = 
-CXX = g++ -std=gnu++11
+CXX = g++
 CXXDEPMODE = depmode=gcc3
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
@@ -178,7 +178,6 @@ ECHO_C =
 ECHO_N = -n
 ECHO_T = 
 EXEEXT = 
-HAVE_CXX11 = 1
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -187,7 +186,7 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LDFLAGS = 
 LIBOBJS = 
 LIBS =  $(sdl2_LIBS) $(libvncclient_LIBS) $(libdrc_LIBS) \
-	$(x264_LIBS)
+	$(x264_LIBS) -ldl -pthread
 LTLIBOBJS = 
 MAKEINFO = ${SHELL} /home/d/pc2drc/libdrc-vnc/drcvncclient/missing makeinfo
 MKDIR_P = /usr/bin/mkdir -p
